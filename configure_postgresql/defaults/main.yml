@@ -1,0 +1,9 @@
+---
+postgresql_version_debian: "13" #change (указать версию для Debian)
+
+db_name: "test_db"              #change (название новой БД)
+db_user: "test_user"            #change (название нового пользователя БД)
+db_user_password: "P@ssw0rd"    #change (пароль для нового пользователя БД)
+
+access_network: "*"             #change (разрешение подключения для все сетей "postgresql.conf")
+network_mask: "192.168.0.0/24"  #change (разрешение для подключения из сети "pg_hba.conf")

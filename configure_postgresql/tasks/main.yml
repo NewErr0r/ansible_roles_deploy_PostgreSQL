@@ -1,0 +1,35 @@
+---
+- name: Create DataBase
+  community.postgresql.postgresql_db:
+    state: present
+    name: "{{ db_name }}"
+  become: true
+  become_user: postgres
+
+- name: Create db user 
+  community.postgresql.postgresql_user:
+    state: present
+    name: "{{ db_user }}"
+    password: "{{ db_user_password }}"
+  become: true
+  become_user: postgres
+
+- name: Grant db user access to db 
+  community.postgresql.postgresql_privs:
+    type: database 
+    database: "{{ db_name }}"
+    roles: "{{ db_user }}" 
+    privs: all 
+    grant_option: false 
+  become: true 
+  become_user: postgres
+
+- name: Configure Remote access for DB in CentOS
+  include_tasks: centos_remote_access.yaml
+  when:
+    - ansible_os_family == "RedHat"
+
+- name: Configure Remote access for DB in Debian
+  include_tasks: debian_remote_access.yaml
+  when:
+    - ansible_os_family == "Debian"

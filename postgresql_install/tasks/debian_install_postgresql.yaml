@@ -1,0 +1,19 @@
+--- 
+- name: Update all packages 
+  apt: 
+    name: "*"
+    state: latest 
+    update_cache: yes
+    force_apt_get: yes
+
+- name: Install packages for PostgreSQL
+  apt: 
+    name: "{{ debian_packages }}"
+    state: latest
+  notify: 
+    - Started and Enabled PostgreSQL
+
+- name: Check if PostgreSQL is instialized for Debian
+  stat: 
+    path: "{{ postgresql_data_dir }}/pg_hba.conf"
+  register: postgres_data

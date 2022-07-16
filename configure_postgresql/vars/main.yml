@@ -1,0 +1,6 @@
+---
+destin_folder_centos_postgresql: /var/lib/pgsql/data/postgresql.conf
+destin_folder_centos_pg_nba: /var/lib/pgsql/data/pg_hba.conf 
+
+destin_folder_debian_postgresql: /etc/postgresql/{{ postgresql_version_debian }}/main/postgresql.conf
+destin_folder_debian_pg_nba: /etc/postgresql/{{ postgresql_version_debian }}/main/pg_hba.conf

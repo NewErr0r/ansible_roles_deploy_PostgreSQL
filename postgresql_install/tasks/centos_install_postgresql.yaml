@@ -1,0 +1,33 @@
+---
+- name: Configure Firewalld
+  firewalld:
+    port: "5432/tcp"
+    permanent: true
+    state: enabled
+  notify: 
+    - Restart Firewalld
+
+- name: Restart Firewalld
+  service: 
+    name: firewalld
+    state: restarted
+
+- name: Install packages for PostgreSQL
+  dnf: 
+    name: "{{ centos_packages }}" 
+    state: latest
+
+- name: Check if PostgreSQL is instialized for CentOS
+  stat: 
+    path: "/var/lib/pgsql/data/pg_hba.conf"
+  register: postgres_data
+
+- name: Initialize PostgreSQL for CentOS
+  shell: "postgresql-setup initdb"
+  when: not postgres_data.stat.exists
+
+- name: Restarted PostgreSQL 
+  service: 
+    name: postgresql 
+    state: restarted 
+    enabled: yes

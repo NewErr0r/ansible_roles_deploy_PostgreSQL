@@ -1,0 +1,11 @@
+---    
+- name: Restart Firewalld
+  service: 
+    name: firewalld 
+    state: restarted
+
+- name: Started and Enabled PostgreSQL
+  service:
+    name: postgresql 
+    state: started 
+    enabled: true

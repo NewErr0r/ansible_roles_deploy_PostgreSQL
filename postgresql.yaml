@@ -1,0 +1,10 @@
+---
+- name: deploy PostgreSQL
+  hosts: all
+  become: true
+
+  roles:
+#    - { role: postgresql_install, when: ansible_os_family == 'RedHat'}
+#    - { role: postgresql_install, when: ansible_os_family == 'Debian'}
+#    - { role: configure_postgresql, when: ansible_os_family == 'RedHat'}
+#    - { role: configure_postgresql, when: ansible_os_family == 'Debian'}

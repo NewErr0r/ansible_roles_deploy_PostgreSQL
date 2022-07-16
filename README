@@ -1,0 +1,25 @@
+1.Необходимые изменения, везде где есть комментарий "#change"
+
+В файлах:
+
+postgresql_install/defaults/main.yml #указать версию  PostgreSQL для Debian
+
+configure_postgresql/defaults/main.yml #описание в файле
+
+2. Запуск ролей:
+
+
+Для установки PostgreSQL-Server на CentOS раскомментировать в файлу "postgresql.yaml" строку:
+#    - { role: postgresql_install, when: ansible_os_family == 'RedHat'}
+
+Для установки PostgreSQL-Server на Debian раскомментировать в файлу "postgresql.yaml" строку:
+#    - { role: postgresql_install, when: ansible_os_family == 'Debian'}
+
+Для создания БД и пользователя и предоставления удалённого доступа на CentOS раскомментировать в файлу "postgresql.yaml" строку:
+#    - { role: configure_postgresql, when: ansible_os_family == 'RedHat'}
+
+Для создания БД и пользователя и предоставления удалённого доступа на Debian раскомментировать в файлу "postgresql.yaml" строку:
+#    - { role: configure_postgresql, when: ansible_os_family == 'Debian'}
+
+
+

@@ -1,0 +1,14 @@
+---
+centos_packages:
+  - postgresql
+  - postgresql-server
+  - python3-psycopg2
+
+debian_packages:
+  - postgresql
+  - postgresql-contrib          
+  - libpq-dev
+  - python3-psycopg2
+  - sudo
+
+postgresql_data_dir: "/var/lib/postgresql/{{ postgresql_version }}/main"
