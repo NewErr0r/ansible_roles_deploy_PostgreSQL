@@ -8,3 +8,5 @@
 #    - { role: postgresql_install, when: ansible_os_family == 'Debian'}
 #    - { role: configure_postgresql, when: ansible_os_family == 'RedHat'}
 #    - { role: configure_postgresql, when: ansible_os_family == 'Debian'}
+#    - postgresql_install_ubuntu
+    - postgresql_configure_ubuntu

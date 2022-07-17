@@ -1,0 +1,5 @@
+---
+packages:
+  - postgresql
+  - postgresql-contrib
+  - python3-psycopg2

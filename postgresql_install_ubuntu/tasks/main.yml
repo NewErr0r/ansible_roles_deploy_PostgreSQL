@@ -1,0 +1,8 @@
+---
+- name: Install PostgreSQL on Ubuntu 
+  apt:
+    name: "{{ packages }}"
+    state: latest
+    update_cache: yes
+  notify: 
+    - Started and Enabled PostgreSQL

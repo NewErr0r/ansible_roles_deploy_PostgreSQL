@@ -1,0 +1,6 @@
+---
+- name: Started and Enabled PostgreSQL
+  service: 
+    name: postgresql 
+    state: started
+    enabled: true
