@@ -1,2 +1,5 @@
 ---
-# handlers file for postgresql_configure_ubuntu
+- name: Restarted PostgreSQL
+  service: 
+    name: postgresql 
+    state: restarted 

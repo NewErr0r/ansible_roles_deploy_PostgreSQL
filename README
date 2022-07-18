@@ -15,11 +15,14 @@ configure_postgresql/defaults/main.yml #описание в файле
 Для установки PostgreSQL-Server на Debian раскомментировать в файлу "postgresql.yaml" строку:
 #    - { role: postgresql_install, when: ansible_os_family == 'Debian'}
 
+Для установки PostgreSQL-Server на Ubuntu раскомментировать в файлу "postgresql.yaml" строку:
+#    - postgresql_install_ubuntu
+
 Для создания БД и пользователя и предоставления удалённого доступа на CentOS раскомментировать в файлу "postgresql.yaml" строку:
 #    - { role: configure_postgresql, when: ansible_os_family == 'RedHat'}
 
 Для создания БД и пользователя и предоставления удалённого доступа на Debian раскомментировать в файлу "postgresql.yaml" строку:
 #    - { role: configure_postgresql, when: ansible_os_family == 'Debian'}
 
-
-
+Для создания БД и пользователя и предоставления удалённого доступа на Ubuntu раскомментировать в файлу "postgresql.yaml" строку:
+#    - postgresql_configure_ubuntu

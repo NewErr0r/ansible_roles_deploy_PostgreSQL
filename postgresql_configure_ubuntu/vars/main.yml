@@ -1,2 +1,3 @@
 ---
-# vars file for postgresql_configure_ubuntu
+destin_folder_postgresql: /etc/postgresql/{{ postgresql_version }}/main/postgresql.conf
+destin_folder_pg_nba: /etc/postgresql/{{ postgresql_version }}/main/pg_hba.conf

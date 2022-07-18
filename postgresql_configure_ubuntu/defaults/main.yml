@@ -2,3 +2,7 @@
 db_name: "test_db"              #change (название новой БД)
 db_user: "test_user"            #change (название нового пользователя БД)
 db_user_password: "P@ssw0rd"    #change (пароль для нового пользователя БД)
+
+postgresql_version: "12"          #change
+allowed_network: "192.168.0.0/24" #change (remote access - "pg_hba.conf")
+remote_access: "*"                #change (remote access - "postgresql.conf")

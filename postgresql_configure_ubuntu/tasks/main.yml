@@ -23,3 +23,6 @@
     grant_option: false 
   become: true 
   become_user: postgres
+
+- name: Configure Remote access for DB in Ubuntu
+  include_tasks: remote_access.yaml

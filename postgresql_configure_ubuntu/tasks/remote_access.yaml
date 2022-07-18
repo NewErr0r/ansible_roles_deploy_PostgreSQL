@@ -1,0 +1,12 @@
+---
+- name: Configure remote access to PostgreSQL "postgresql.conf"
+  template:
+    src: postgresql.conf.j2
+    dest: "{{ destin_folder_postgresql }}"
+
+- name: Configure remote access to PostgreSQL 
+  template:
+    src: pg_hba.conf.j2
+    dest: "{{ destin_folder_pg_nba }}"
+  notify: 
+    - Restarted PostgreSQL
